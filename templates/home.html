@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phonebook</title>
+  <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+  <div class="container bg-white">
+    <div class="row">
+      <div class="col p-0">
+        <img src="https://picsum.photos/seed/phonebook/1400/150" class="img-fluid">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col bg-info p-2 text-white"><a class="text-white" href="/">HOME</a></div>
+    </div>
+    <div class="row mb-5">
+      <div class="col">
+        
+          <h3 class="my-3">Contacts</h3>
+        <ul class="list-group">
+        {% for d in data %}
+    <li class="list-group-item"><img src='https://picsum.photos/seed/{{d['slug']}}/50'> <a href="/contact/{{d['slug']}}">{{d['firstname']}} {{d['lastname']}}</a></li>
+  
+        {% endfor %}
+        </ul>
+        
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col p-2 text-white text-end bg-secondary">Coyright &copy; 2021. ASOIU</div>
+    </div>
+  </div>
+</body>
+</html>
